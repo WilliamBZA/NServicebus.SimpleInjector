@@ -1,3 +1,7 @@
+using NServiceBus.ObjectBuilder;
+using NServiceBus.SimpleInjector;
+using SimpleInjector.Lifestyles;
+
 namespace NServiceBus
 {
     using Container;
@@ -30,7 +34,7 @@ namespace NServiceBus
     {
         public ContainerHolder(global::SimpleInjector.Container container)
         {
-            ExistingContainer = container;
+            ExistingContainer = container.Clone();
         }
 
         public global::SimpleInjector.Container ExistingContainer { get; }

@@ -15,15 +15,16 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
         [SkipWeaving]
         Container container;
 
-        bool isChildContainer;
+        bool isChildContainer=false;
         bool isBuilt = false;
         Dictionary<Type, IEnumerable<Registration>> collectionRegistrations = new Dictionary<Type, IEnumerable<Registration>>();
 
         public SimpleInjectorObjectBuilder(Container parentContainer)
         {
-            container = parentContainer.Clone();
+            container = parentContainer;
 
             isChildContainer = true;
+            AsyncScopedLifestyle.BeginScope(container);
         }
 
         public SimpleInjectorObjectBuilder()
@@ -163,6 +164,8 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         void RegisterCollection(Type implementedInterface, IEnumerable<Registration> registrations)
         {
+            EnsureContainerIsConfigurable();
+
             container.RegisterCollection(implementedInterface, registrations);
 
             collectionRegistrations[implementedInterface] = registrations;
