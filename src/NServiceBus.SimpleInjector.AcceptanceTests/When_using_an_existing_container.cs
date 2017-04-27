@@ -20,6 +20,7 @@
 
             Assert.IsTrue(context.PropertyWasInjected);
         }
+        
 
         public class MyService
         {
@@ -37,7 +38,9 @@
             public Endpoint()
             {
                 var container = new global::SimpleInjector.Container();
+                container.Options.AllowOverridingRegistrations = true;
                 container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+                container.Options.AutoWirePropertiesImplicitly();
 
                 container.Register(() => new MyService { Id = "Created outside" }, global::SimpleInjector.Lifestyle.Scoped);
 

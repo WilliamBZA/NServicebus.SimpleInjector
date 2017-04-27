@@ -67,6 +67,7 @@
     <Compile Include="When_using_an_existing_container.cs" />
     <Compile Include="When_declaring_a_public_property.cs" />
     <Compile Include="When_setting_properties_explicitly_via_the_container.cs" />
+    <Compile Include="When_using_a_bad_container.cs" />
     <Compile Include="When_using_sagas.cs" />
   </ItemGroup>
   <ItemGroup>

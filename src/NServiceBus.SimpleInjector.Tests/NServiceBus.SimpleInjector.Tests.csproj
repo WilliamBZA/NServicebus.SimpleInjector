@@ -78,7 +78,6 @@
     <Compile Include="App_Packages\NSB.ContainerTests.6.2.0\When_querying_for_registered_components.cs" />
     <Compile Include="App_Packages\NSB.ContainerTests.6.2.0\When_registering_components.cs" />
     <Compile Include="App_Packages\NSB.ContainerTests.6.2.0\When_using_nested_containers.cs" />
-    <Compile Include="ContainerExtensionTests.cs" />
     <Compile Include="SetUpFixture.cs" />
     <Compile Include="SimpleInjectorBuilderTests.cs" />
   </ItemGroup>

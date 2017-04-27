@@ -34,7 +34,7 @@ namespace NServiceBus
     {
         public ContainerHolder(global::SimpleInjector.Container container)
         {
-            ExistingContainer = container.Clone();
+            ExistingContainer = container;
         }
 
         public global::SimpleInjector.Container ExistingContainer { get; }
