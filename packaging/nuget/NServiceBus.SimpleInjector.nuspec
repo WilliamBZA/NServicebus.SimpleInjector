@@ -3,7 +3,7 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>NServiceBus.SimpleInjector</id>
     <title>NServiceBus SimpleInjector</title>
-    <version>2.1.2</version>
+    <version>3.0.0</version>
     <authors>WilliamBZA</authors>
     <owners>WilliamBZA</owners>
     <licenseUrl>https://github.com/WilliamBZA/NServicebus.SimpleInjector/blob/master/LICENSE</licenseUrl>
@@ -14,7 +14,7 @@
     <description>Adapter for the SimpleInjector IoC Container</description>
     <releaseNotes></releaseNotes>
     <dependencies>
-      <dependency id="NServiceBus" version="[6.0.0,7.0.1)" />
+      <dependency id="NServiceBus" version="[6.0.0,8.0.0)" />
       <dependency id="SimpleInjector" version="[4.0.0, 4.0.8]" />
     </dependencies>
   </metadata>
