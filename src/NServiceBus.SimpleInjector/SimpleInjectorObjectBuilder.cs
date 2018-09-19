@@ -14,8 +14,7 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
     {
         [SkipWeaving]
         Container container;
-
-        bool externalContainer = false;
+        readonly bool externalContainer = false;
         Dictionary<Type, IEnumerable<Registration>> collectionRegistrations = new Dictionary<Type, IEnumerable<Registration>>();
 
         public SimpleInjectorObjectBuilder(Container parentContainer)
@@ -124,7 +123,7 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
                 var first = existingRegistration.First();
                 if (!AreRegistrationsEqual(first, registration))
                 {
-                    container.RegisterCollection(component, existingRegistration.Union(new[] { registration }));
+                    container.Collection.Register(component, existingRegistration.Union(new[] { registration }));
                 }
             }
             else
@@ -158,7 +157,7 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
         void RegisterCollection(Type implementedInterface, IEnumerable<Registration> registrations)
         {
 
-            container.RegisterCollection(implementedInterface, registrations);
+            container.Collection.Register(implementedInterface, registrations);
 
             collectionRegistrations[implementedInterface] = registrations;
         }
@@ -194,7 +193,7 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
                 {
                     var existingRegistrations = GetExistingRegistrationsFor(implementedInterface);
 
-                    container.RegisterCollection(implementedInterface, existingRegistrations.Union(new[] { registration }));
+                    container.Collection.Register(implementedInterface, existingRegistrations.Union(new[] { registration }));
                 }
                 else
                 {

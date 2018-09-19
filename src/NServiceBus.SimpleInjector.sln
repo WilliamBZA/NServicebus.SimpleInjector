@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector", "NServiceBus.SimpleInjector\NServiceBus.SimpleInjector.csproj", "{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9EBDB2BA-3BED-41CE-B97A-2C1AA3810780}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.AcceptanceTests", "NServiceBus.SimpleInjector.AcceptanceTests\NServiceBus.SimpleInjector.AcceptanceTests.csproj", "{1F6829BB-2B45-4A2D-9874-44DED5657FBB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.Tests", "NServiceBus.SimpleInjector.Tests\NServiceBus.SimpleInjector.Tests.csproj", "{22008780-552A-4047-95F5-A6C2BDB790B1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E83771E-6B6A-47F6-B5F5-5151D90AD873}"
 	ProjectSection(SolutionItems) = preProject
 		..\packaging\nuget\NServiceBus.SimpleInjector.nuspec = ..\packaging\nuget\NServiceBus.SimpleInjector.nuspec
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector", "NServiceBus.SimpleInjector\NServiceBus.SimpleInjector.csproj", "{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.Tests", "NServiceBus.SimpleInjector.Tests\NServiceBus.SimpleInjector.Tests.csproj", "{F7740891-230E-491D-BB63-4ECEB7A59A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.AcceptanceTests", "NServiceBus.SimpleInjector.AcceptanceTests\NServiceBus.SimpleInjector.AcceptanceTests.csproj", "{04C0CB65-C858-494E-ADD1-6A9A1159176F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,20 +25,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F6829BB-2B45-4A2D-9874-44DED5657FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F6829BB-2B45-4A2D-9874-44DED5657FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F6829BB-2B45-4A2D-9874-44DED5657FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F6829BB-2B45-4A2D-9874-44DED5657FBB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22008780-552A-4047-95F5-A6C2BDB790B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22008780-552A-4047-95F5-A6C2BDB790B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22008780-552A-4047-95F5-A6C2BDB790B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22008780-552A-4047-95F5-A6C2BDB790B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7740891-230E-491D-BB63-4ECEB7A59A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7740891-230E-491D-BB63-4ECEB7A59A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7740891-230E-491D-BB63-4ECEB7A59A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7740891-230E-491D-BB63-4ECEB7A59A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C0CB65-C858-494E-ADD1-6A9A1159176F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C0CB65-C858-494E-ADD1-6A9A1159176F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C0CB65-C858-494E-ADD1-6A9A1159176F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C0CB65-C858-494E-ADD1-6A9A1159176F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0049593-1A75-433E-A963-1F313956F447}
 	EndGlobalSection
 EndGlobal
