@@ -14,7 +14,7 @@
     <description>Adapter for the SimpleInjector IoC Container</description>
     <releaseNotes></releaseNotes>
     <dependencies>
-      <dependency id="NServiceBus" version="[6.0.0,8.0.0)" />
+      <dependency id="NServiceBus" version="[7.0.0,8.0.0)" />
       <dependency id="SimpleInjector" version="[4.0.0, 5.0.0)" />
     </dependencies>
   </metadata>
