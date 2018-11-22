@@ -15,6 +15,7 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
         [SkipWeaving]
         Container container;
         readonly bool externalContainer = false;
+        bool isBuilt = false;
         Dictionary<Type, IEnumerable<Registration>> collectionRegistrations = new Dictionary<Type, IEnumerable<Registration>>();
 
         public SimpleInjectorObjectBuilder(Container parentContainer)
@@ -68,6 +69,8 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         public object Build(Type typeToBuild)
         {
+            isBuilt = true;
+
             if (!HasComponent(typeToBuild))
             {
                 throw new ActivationException("The requested type is not registered yet");
@@ -80,6 +83,8 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         public IEnumerable<object> BuildAll(Type typeToBuild)
         {
+            isBuilt = true;
+
             if (HasComponent(typeToBuild))
             {
                 collectionRegistrations = null;
@@ -100,6 +105,11 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         public void Configure(Type component, DependencyLifecycle dependencyLifecycle)
         {
+            if (isBuilt)
+            {
+                container = container.Clone();
+            }
+
             var registration = GetRegistrationFromDependencyLifecycle(dependencyLifecycle, component);
 
             foreach (var implementedInterface in component.GetInterfaces())
@@ -134,6 +144,11 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         public void Configure<T>(Func<T> componentFactory, DependencyLifecycle dependencyLifecycle)
         {
+            if (isBuilt)
+            {
+                container = container.Clone();
+            }
+
             var funcType = typeof(T);
             var registration = GetRegistrationFromDependencyLifecycle(dependencyLifecycle, funcType, () => componentFactory());
 
@@ -156,6 +171,10 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
 
         void RegisterCollection(Type implementedInterface, IEnumerable<Registration> registrations)
         {
+            if (isBuilt)
+            {
+                container = container.Clone();
+            }
 
             container.Collection.Register(implementedInterface, registrations);
 
@@ -184,6 +203,10 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
         
         public void RegisterSingleton(Type lookupType, object instance)
         {
+            if (isBuilt)
+            {
+                container = container.Clone();
+            }
 
             var registration = GetRegistrationFromDependencyLifecycle(DependencyLifecycle.SingleInstance, lookupType, instance);
 
