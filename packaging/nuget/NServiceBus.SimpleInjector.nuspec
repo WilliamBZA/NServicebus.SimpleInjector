@@ -3,7 +3,7 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>NServiceBus.SimpleInjector</id>
     <title>NServiceBus SimpleInjector</title>
-    <version>3.0.2</version>
+    <version>3.0.3</version>
     <authors>WilliamBZA</authors>
     <owners>WilliamBZA</owners>
     <licenseUrl>https://github.com/WilliamBZA/NServicebus.SimpleInjector/blob/master/LICENSE</licenseUrl>
@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\binaries\NServiceBus.SimpleInjector.dll" target="lib\net452" />
+    <file src="..\..\binaries\netstandard2.0\NServiceBus.SimpleInjector.dll" target="lib\net452" />
   </files>
 </package>
