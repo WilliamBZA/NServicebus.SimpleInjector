@@ -162,11 +162,41 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
                 }
                 else
                 {
-                    container.AddRegistration(implementedInterface, registration);
+                    AddRegistration(componentFactory, dependencyLifecycle, funcType, registration, implementedInterface);
                 }
             }
 
-            container.AddRegistration(funcType, registration);
+            AddRegistration(componentFactory, dependencyLifecycle, funcType, registration);
+        }
+
+        private void AddRegistration<T>(Func<T> componentFactory, DependencyLifecycle dependencyLifecycle, Type funcType, Registration registration)
+        {
+            try
+            {
+                container.AddRegistration(funcType, registration);
+            }
+            catch (ArgumentException)
+            {
+                container = container.Clone();
+                registration = GetRegistrationFromDependencyLifecycle(dependencyLifecycle, funcType, () => componentFactory());
+
+                container.AddRegistration(funcType, registration);
+            }
+        }
+
+        private void AddRegistration<T>(Func<T> componentFactory, DependencyLifecycle dependencyLifecycle, Type funcType, Registration registration, Type implementedInterface)
+        {
+            try
+            {
+                container.AddRegistration(implementedInterface, registration);
+            }
+            catch (InvalidOperationException)
+            {
+                container = container.Clone();
+                registration = GetRegistrationFromDependencyLifecycle(dependencyLifecycle, funcType, () => componentFactory());
+
+                container.AddRegistration(implementedInterface, registration);
+            }
         }
 
         void RegisterCollection(Type implementedInterface, IEnumerable<Registration> registrations)

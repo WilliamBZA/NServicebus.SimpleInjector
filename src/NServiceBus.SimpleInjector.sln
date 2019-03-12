@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\packaging\nuget\NServiceBus.SimpleInjector.nuspec = ..\packaging\nuget\NServiceBus.SimpleInjector.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector", "NServiceBus.SimpleInjector\NServiceBus.SimpleInjector.csproj", "{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.SimpleInjector", "NServiceBus.SimpleInjector\NServiceBus.SimpleInjector.csproj", "{0B2A0F97-FFC7-4F8C-9A23-A42F7D55B2F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.Tests", "NServiceBus.SimpleInjector.Tests\NServiceBus.SimpleInjector.Tests.csproj", "{F7740891-230E-491D-BB63-4ECEB7A59A4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.SimpleInjector.Tests", "NServiceBus.SimpleInjector.Tests\NServiceBus.SimpleInjector.Tests.csproj", "{F7740891-230E-491D-BB63-4ECEB7A59A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.SimpleInjector.AcceptanceTests", "NServiceBus.SimpleInjector.AcceptanceTests\NServiceBus.SimpleInjector.AcceptanceTests.csproj", "{04C0CB65-C858-494E-ADD1-6A9A1159176F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.SimpleInjector.AcceptanceTests", "NServiceBus.SimpleInjector.AcceptanceTests\NServiceBus.SimpleInjector.AcceptanceTests.csproj", "{04C0CB65-C858-494E-ADD1-6A9A1159176F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
