@@ -3,7 +3,7 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>NServiceBus.SimpleInjector</id>
     <title>NServiceBus SimpleInjector</title>
-    <version>3.0.5</version>
+    <version>3.0.6</version>
     <authors>WilliamBZA</authors>
     <owners>WilliamBZA</owners>
     <license type="expression">MIT</license>
@@ -15,7 +15,7 @@
     <releaseNotes></releaseNotes>
     <dependencies>
       <dependency id="NServiceBus" version="[7.0.0,8.0.0)" />
-      <dependency id="SimpleInjector" version="[4.0.0, 5.0.0)" />
+      <dependency id="SimpleInjector" version="[4.0.0, 5.0.3]" />
     </dependencies>
   </metadata>
   <files>
