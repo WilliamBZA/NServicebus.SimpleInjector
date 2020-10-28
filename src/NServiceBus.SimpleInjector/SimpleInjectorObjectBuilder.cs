@@ -33,6 +33,8 @@ namespace NServiceBus.ObjectBuilder.SimpleInjector
             container.Options.AllowOverridingRegistrations = true;
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             container.Options.AutoWirePropertiesImplicitly();
+            // Without this the InstancePerCall component cannot be registered because it is an IDisposable
+            container.Options.EnableAutoVerification = false;
 
             AsyncScopedLifestyle.BeginScope(container);
         }
