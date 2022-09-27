@@ -41,6 +41,7 @@ namespace NServiceBus.SimpleInjector
             var clonedContainer = new global::SimpleInjector.Container();
             clonedContainer.AllowToResolveArraysAndLists();
             clonedContainer.Options.AllowOverridingRegistrations = true;
+            clonedContainer.Options.EnableAutoVerification = false;
             clonedContainer.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             clonedContainer.Options.AutoWirePropertiesImplicitly();
             AsyncScopedLifestyle.BeginScope(clonedContainer);

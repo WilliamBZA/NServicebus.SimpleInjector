@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Title>NServiceBus Container SimpleInjector Implementation</Title>
     <Product>NServiceBus</Product>
-    <Company>NServiceBus Ltd.</Company>
-    <Copyright>Copyright NServiceBus. All rights reserved</Copyright>
     <Description>Implementation of container functionality on top of SimpleInjector.</Description>
     <AssemblyVersion>3.0.6.0</AssemblyVersion>
     <Version>3.0.6</Version>
